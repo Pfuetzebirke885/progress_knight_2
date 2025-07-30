@@ -100,10 +100,10 @@ function addMultipliers() {
 
 function getHeroXpGainMultipliers(job)
 {
-    var baseMult = 1
+    var baseMult = 10
 
     if (job instanceof Job)
-        baseMult = 50000
+        baseMult = 500000
 
     if (gameData.requirements["Rise of Great Heroes"].isCompleted())
         baseMult *= 10000
@@ -415,7 +415,7 @@ function getUnpausedGameSpeed() {
     const gameSpeed = baseGameSpeed * timeWarpingSpeed * getChallengeBonus("time_does_not_fly") * getGottaBeFastGain() * getDarkMatterSkillTimeWarping() 
 
     if (gameData.active_challenge == "time_does_not_fly" || gameData.active_challenge == "the_darkest_time")
-        return Math.pow(gameSpeed, 0.7)
+        return Math.pow(gameSpeed, 1.7)
 
     if (gameData.active_challenge == "legends_never_die")
         return Math.pow(gameSpeed, 0.75)
